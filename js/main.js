@@ -16,7 +16,7 @@ const app = createApp({
         .then((resp) => {
           this.inc++;
           this.emailListTemp.push(resp.data.response);
-          if (this.inc === 10) {
+          if (this.inc % 10 === 0) {
             this.emailList = this.emailListTemp;
           }
         });
@@ -24,7 +24,6 @@ const app = createApp({
 
     getList() {
       this.inc = 0;
-      console.log(this.inc);
       for (let i = 0; i < 10; i++) {
         this.fetchData();
       }

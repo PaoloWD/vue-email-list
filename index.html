@@ -31,7 +31,8 @@ HTML
       <button class="btn btn-danger" @click="getList()">
         Genera 10 e-mail
       </button>
-      {{emailList}}
+
+      <div v-if="emailList.length % 10===0">{{emailList}}</div>
     </div>
 
     <script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
